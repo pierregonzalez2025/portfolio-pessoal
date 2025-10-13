@@ -14,3 +14,26 @@ section { padding: 5rem 2rem 3rem; max-width: 1000px; margin: auto; text-align: 
 .btn:hover { background: #0056b3; }
 footer { background: #333; color: white; text-align: center; padding: 1rem; }
 @media (max-width: 768px) { nav ul { flex-direction: column; gap: 1rem; } .projetos-grid { grid-template-columns: 1fr; } }
+/* Media Query para Mobile (corrige o menu cortado) */
+@media (max-width: 768px) {
+    .navbar { 
+        flex-direction: column; /* Menu vira coluna */
+        gap: 10px; /* Espaço entre itens */
+        padding: 0.5rem; /* Menos padding */
+    }
+    .nav-links { 
+        flex-direction: column; /* Itens em coluna */
+        gap: 0.5rem; /* Espaço vertical */
+        font-size: 0.9rem; /* Fonte menor pra caber */
+    }
+    .logo h1 { 
+        font-size: 1.2rem; /* Título menor */
+        margin-bottom: 0.5rem;
+    }
+    section { 
+        padding: 1rem; /* Menos padding nas seções */
+    }
+    .projetos-grid { 
+        grid-template-columns: 1fr; /* Cards em uma coluna */
+    }
+}
