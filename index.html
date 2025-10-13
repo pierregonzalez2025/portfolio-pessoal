@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal de desenvolvedor web. Veja sobre mim, habilidades, projetos e formas de contato.">
+    <meta name="keywords" content="portfólio, desenvolvedor web, projetos, habilidades, contato">
+    <meta name="author" content="Luiz Gonzalez">
+    <title>Portfólio | Seu Nome</title>
+    <style>
+        :root {
+            --primary: #2d89ef;
+            --secondary: #222;
+            --background: #f4f4f4;
+            --white: #fff;
+            --badge-bg: #e0e7ff;
+            --badge-color: #2d89ef;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--background);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #b3d1ff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        /* Sobre */
+        #sobre {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        #sobre img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+        #sobre .bio {
+            flex: 1;
+        }
+        /* Habilidades */
+        #habilidades .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .badge {
+            background: var(--badge-bg);
+            color: var(--badge-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            box-shadow: 0 1px 4px rgba(45,137,239,0.08);
+        }
+        /* Projetos */
+        #projetos .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 {
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            flex: 1;
+            margin-bottom: 1rem;
+        }
+        .card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            align-self: flex-start;
+            transition: color 0.2s;
+        }
+        .card a:hover {
+            color: #1b5fa7;
+        }
+        /* Contato */
+        #contato .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .contact-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .contact-btn:hover {
+            background: #1b5fa7;
+        }
+        /* Responsivo */
+        @media (max-width: 700px) {
+            #sobre {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+    <script>
+        // Scroll suave para navegação
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('nav a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<script src="script.js"></script>
+<body>
+    <header>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+    <main class="container">
+        <!-- Sobre -->
+        <section id="sobre">
+            <img src="luizimg.png" alt="Foto de perfil do desenvolvedor">
+            <div class="bio">
+                <h1>Luiz Gonzalez</h1>
+                <p>
+                    Olá! Sou desenvolvedor web apaixonado por tecnologia e inovação. Tenho experiência em criação de sites responsivos, aplicações web modernas e soluções personalizadas para clientes. Busco sempre aprender novas ferramentas e aprimorar minhas habilidades para entregar projetos de alta qualidade.
+                </p>
+            </div>
+        </section>
+        <!-- Habilidades -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <div class="badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">React</span>
+                <span class="badge">Node.js</span>
+                <span class="badge">Git</span>
+                <span class="badge">Figma</span>
+                <span class="badge">Responsividade</span>
+            </div>
+        </section>
+        <!-- Projetos -->
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Projeto 1</h3>
+                    <p>Descrição breve do projeto 1. Tecnologias usadas, desafios e resultados.</p>
+                    <a href="https://github.com/seuusuario/projeto1" target="_blank">Ver no GitHub</a>
+                </div>
+                <div class="card">
+                    <h3>Projeto 2</h3>
+                    <p>Descrição breve do projeto 2. Tecnologias usadas, desafios e resultados.</p>
+                    <a href="https://github.com/seuusuario/projeto2" target="_blank">Ver no GitHub</a>
+                </div>
+                <div class="card">
+                    <h3>Projeto 3</h3>
+                    <p>Descrição breve do projeto 3. Tecnologias usadas, desafios e resultados.</p>
+                    <a href="https://github.com/seuusuario/projeto3" target="_blank">Ver no GitHub</a>
+                </div>
+            </div>
+        </section>
+        <!-- Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato comigo pelos canais abaixo:</p>
+            <div class="buttons">
+                <a class="contact-btn" href="mailto:lp.studio466@gmail.com?subject=Olá do meu portfólio!&body=Oi, vi seu site e adorei. Vamos conversar sobre um projeto?">Email</a>
+                </a>
+                <a class="contact-btn" href="https://www.linkedin.com/in/luizpierredev/" target="_blank">
+                    💼 LinkedIn
+                </a>
+                <a class="contact-btn" href="https://wa.me/5567993195544" target="_blank">
+                    📱 WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
